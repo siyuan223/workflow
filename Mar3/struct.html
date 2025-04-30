@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角形和思维导图</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #triangleCanvas {
+            border: 1px solid black;
+            margin-top: 20px;
+        }
+        .mindmap-container {
+            margin-top: 40px;
+            text-align: left;
+            display: inline-block;
+        }
+        .mindmap-node {
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 120px;
+            text-align: center;
+        }
+        .mindmap-line {
+            width: 2px;
+            background-color: #333;
+            margin: 0 auto;
+        }
+        .mindmap-branch {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>三角形</h1>
+    <canvas id="triangleCanvas" width="300" height="300"></canvas>
+
+    <div class="mindmap-container">
+        <h1>mindmap</h1>
+        <div class="mindmap-node">中心主题</div>
+        <div class="mindmap-line" style="height: 50px;"></div>
+        <div class="mindmap-branch">
+            <div class="mindmap-node">分支 1</div>
+            <div class="mindmap-node">分支 2</div>
+            <div class="mindmap-node">分支 3</div>
+        </div>
+        <div class="mindmap-line" style="height: 50px;"></div>
+        <div class="mindmap-branch">
+            <div class="mindmap-node">子主题 1</div>
+            <div class="mindmap-node">子主题 2</div>
+            <div class="mindmap-node">子主题 3</div>
+        </div>
+    </div>
+
+    <script>
+        // 绘制三角形
+        var canvas = document.getElementById("triangleCanvas");
+        var ctx = canvas.getContext("2d");
+        
+        // 设置三角形的坐标
+        ctx.beginPath();
+        ctx.moveTo(150, 50); // 起始点
+        ctx.lineTo(50, 250); // 第一个边
+        ctx.lineTo(250, 250); // 第二个边
+        ctx.closePath(); // 结束路径，闭合三角形
+        
+        // 填充颜色
+        ctx.fillStyle = "#4CAF50";
+        ctx.fill();
+
+        // 设置三角形的边框
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "#2c6f2f";
+        ctx.stroke();
+    </script>
+
+</body>
+</html>
+
